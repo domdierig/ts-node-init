@@ -1,0 +1,22 @@
+{
+    "name": "ts-node-init",
+    "version": "0.1.0",
+    "description": "a cli to init a node project with typescript",
+    "main": "bin/app.js",
+    "scripts": {
+        "dev": "tsc --watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DomPilipu/ts-node-init.git"
+    },
+    "author": "Dominic Dierig",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/DomPilipu/ts-node-init/issues"
+    },
+    "homepage": "https://github.com/DomPilipu/ts-node-init#readme",
+    "devDependencies": {
+        "typescript": "^4.0.3"
+    }
+}

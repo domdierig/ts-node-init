@@ -1,10 +1,17 @@
 {
     "name": "ts-node-init",
-    "version": "0.1.0",
+    "version": "0.1.5",
     "description": "a cli to init a node project with typescript",
     "main": "bin/app.js",
+    "engines": {
+        "node": ">=14.11.0"
+    },
     "scripts": {
-        "dev": "tsc --watch"
+        "dev": "tsc --watch",
+        "start": "node bin/app.js"
+    },
+    "bin": {
+        "tsni": "./bin/app.js"
     },
     "repository": {
         "type": "git",
@@ -18,5 +25,6 @@
     "homepage": "https://github.com/DomPilipu/ts-node-init#readme",
     "devDependencies": {
         "typescript": "^4.0.3"
-    }
+    },
+    "dependencies": {}
 }

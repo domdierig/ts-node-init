@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
-const tsni = require('../lib/app.js');
+const tsni = require('../lib/tsni.js');
 tsni();

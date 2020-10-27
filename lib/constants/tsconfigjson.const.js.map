@@ -1,0 +1,1 @@
+{"version":3,"file":"tsconfigjson.const.js","sourceRoot":"","sources":["../../src/constants/tsconfigjson.const.ts"],"names":[],"mappings":";;;AAAA,MAAM,YAAY,GAAG;IACjB,eAAe,EAAE;QACb,MAAM,EAAE,UAAU;QAClB,eAAe,EAAE,IAAI;QACrB,MAAM,EAAE,QAAQ;QAChB,gBAAgB,EAAE,MAAM;QACxB,SAAS,EAAE,IAAI;QACf,MAAM,EAAE,KAAK;KAChB;IACD,GAAG,EAAE,CAAC,QAAQ,CAAC;CAClB,CAAC;AAEO,oCAAY"}

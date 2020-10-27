@@ -1,17 +1,17 @@
 {
     "name": "ts-node-init",
-    "version": "0.1.9",
+    "version": "1.0.1",
     "description": "a cli to init a node project with typescript, to learn how to do CLIs",
-    "main": "./lib/tsni.js",
+    "main": "lib/tsni.js",
     "engines": {
         "node": ">=14.11.0"
     },
     "scripts": {
         "dev": "tsc --watch",
-        "start": "node lib/tsni.js"
+        "start": "node bin/tsni.js"
     },
     "bin": {
-        "tsni": "./bin/tsni.js"
+        "tsni": "bin/tsni.js"
     },
     "repository": {
         "type": "git",
@@ -27,7 +27,10 @@
     },
     "homepage": "https://github.com/DomPilipu/ts-node-init#readme",
     "devDependencies": {
-        "typescript": "^4.0.3",
-        "@types/node": "^14.14.5"
+        "@types/node": "^14.14.5",
+        "typescript": "^4.0.5"
+    },
+    "dependencies": {
+        "inquirer": "^7.3.3"
     }
 }

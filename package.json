@@ -17,7 +17,10 @@
         "type": "git",
         "url": "git+https://github.com/DomPilipu/ts-node-init.git"
     },
-    "author": "Dominic Dierig",
+    "author": {
+        "name": "Dominic Dierig",
+        "url": "https://twitter.com/domdierig"
+    },
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/DomPilipu/ts-node-init/issues"

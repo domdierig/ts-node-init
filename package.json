@@ -8,7 +8,7 @@
     },
     "scripts": {
         "dev": "tsc --watch",
-        "start": "node bin/tsni.js"
+        "start": "node lib/tsni.js"
     },
     "bin": {
         "tsni": "./bin/tsni.js"

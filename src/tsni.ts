@@ -19,25 +19,23 @@ const tsni = async () => {
                 });
             }
 
-            await fs.writeFile('package.json', JSON.stringify(packagejson), (error) => {
+            await fs.writeFile('package.json', JSON.stringify(packagejson, null, 4), (error) => {
                 if (error) {
                     throw error;
                 }
             });
 
-            await fs.writeFile('tsconfig.json', JSON.stringify(tsconfigjson), (error) => {
+            await fs.writeFile('tsconfig.json', JSON.stringify(tsconfigjson, null, 4), (error) => {
                 if (error) {
                     throw error;
                 }
             });
 
-            if (fs.existsSync('src')) {
-                await fs.writeFile('src/app.ts', "console.log('hello world');", (error) => {
-                    if (error) {
-                        throw error;
-                    }
-                });
-            }
+            await fs.writeFile('src/app.ts', "console.log('hello world');", (error) => {
+                if (error) {
+                    throw error;
+                }
+            });
         })
         .catch((error) => {
             if (error.isTtyError) {

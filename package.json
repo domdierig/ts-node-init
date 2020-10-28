@@ -1,6 +1,6 @@
 {
     "name": "ts-node-init",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "a cli to init a node project with typescript, to learn how to do CLIs",
     "main": "lib/tsni.js",
     "engines": {

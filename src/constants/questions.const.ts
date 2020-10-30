@@ -3,14 +3,24 @@ import { QuestionTypeEnum } from '../enums/questionType.enum';
 import { isNumeric } from '../helper/isNumeric';
 import { Question } from '../interfaces/question.interface';
 
+const packageNameErrorMsg = 'invalid package name';
+const versionNumberErrorMsg = 'invalid version number';
+const fileExtenstionErrorMsg = "don't add any file extension";
+
 const questions: Question[] = [
     {
         type: QuestionTypeEnum.Input,
         name: 'packageName',
         message: 'package name:',
         default: path.basename(process.cwd()),
-        validate: (input) => {
-            return input.length > 0;
+        validate: (input: string) => {
+            if (input.length <= 0) {
+                return packageNameErrorMsg;
+            }
+            if (input.includes(' ')) {
+                return packageNameErrorMsg;
+            }
+            return true;
         },
     },
     {
@@ -18,19 +28,19 @@ const questions: Question[] = [
         name: 'version',
         message: 'version:',
         default: '1.0.0',
-        validate: (input) => {
+        validate: (input: string) => {
             const splittedInput = input.split('.');
             if (splittedInput.length !== 3) {
-                return 'invalid version number';
+                return versionNumberErrorMsg;
             }
             if (!isNumeric(splittedInput[0])) {
-                return 'invalid version number';
+                return versionNumberErrorMsg;
             }
             if (!isNumeric(splittedInput[1])) {
-                return 'invalid version number';
+                return versionNumberErrorMsg;
             }
             if (!isNumeric(splittedInput[2])) {
-                return 'invalid version number';
+                return versionNumberErrorMsg;
             }
             return true;
         },
@@ -44,15 +54,16 @@ const questions: Question[] = [
         type: QuestionTypeEnum.Input,
         name: 'entryPoint',
         message: 'entry point:',
-        default: 'app.js',
-        validate: (input) => {
+        default: 'app',
+        validate: (input: string) => {
             const splittedInput = input.split('.');
 
-            if (splittedInput.length !== 2) {
-                return 'invalid file name';
+            if (splittedInput.length === 1) {
+                return true;
             }
-            if (splittedInput[1] !== 'js') {
-                return 'invalid file name';
+
+            if (splittedInput[splittedInput.length - 1] !== 'js' || splittedInput[splittedInput.length - 1] !== 'ts') {
+                return fileExtenstionErrorMsg;
             }
 
             return true;

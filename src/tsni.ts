@@ -31,7 +31,8 @@ const tsni = async () => {
                 }
             });
 
-            await fs.writeFile('src/app.ts', "console.log('hello world');", (error) => {
+            const fileName = 'src/' + answers.entryPoint + '.ts';
+            await fs.writeFile(fileName, "console.log('hello world');", (error) => {
                 if (error) {
                     throw error;
                 }

@@ -14,7 +14,7 @@ export class PackageJsonModel {
         this.name = answers.packageName;
         this.version = answers.version;
         this.description = answers.description;
-        this.main = 'lib/' + answers.entryPoint;
+        this.main = 'lib/' + answers.entryPoint + '.js';
         this.author = answers.author;
         this.license = answers.license;
 

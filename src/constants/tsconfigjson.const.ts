@@ -1,4 +1,4 @@
-const tsconfigjson = {
+export const tsconfigjson = {
     compilerOptions: {
         module: 'CommonJS',
         esModuleInterop: true,
@@ -9,5 +9,3 @@ const tsconfigjson = {
     },
     lib: ['ES2020'],
 };
-
-export { tsconfigjson };

@@ -11,5 +11,6 @@ npm install -g tsni
 ## Usage
 
 ```
+mkdir myProject
 tsni
 ```

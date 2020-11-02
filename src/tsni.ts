@@ -5,12 +5,14 @@ import { PackageJsonModel } from './models/packagejson.model';
 import { tsconfigjson } from './constants/tsconfigjson.const';
 import { writeFile } from './helper/writeFile';
 import { ensureDirExists } from './helper/ensureDirExists';
+import { getGitUrl } from './helper/getGitUrl';
 
 const tsni = async () => {
     inquirer
         .prompt(questions)
         .then(async (answers: Answers) => {
-            const packagejson = new PackageJsonModel(answers);
+            const gitUrl = await getGitUrl();
+            const packagejson = new PackageJsonModel(answers, gitUrl);
 
             await ensureDirExists('src');
 

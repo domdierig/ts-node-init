@@ -9,8 +9,11 @@ export class PackageJsonModel {
     author: string;
     license: string;
     devDependencies: { [key: string]: string };
+    repository: { [key: string]: string } | null;
+    bugs: { [key: string]: string } | null;
+    homepage: string | null;
 
-    constructor(answers: Answers) {
+    constructor(answers: Answers, gitUrl: string | null) {
         this.name = answers.packageName;
         this.version = answers.version;
         this.description = answers.description;
@@ -26,5 +29,15 @@ export class PackageJsonModel {
             '@types/node': '^14.14.5',
             typescript: '^4.0.5',
         };
+        if (gitUrl) {
+            this.repository = {
+                type: 'git',
+                url: 'git+' + gitUrl,
+            };
+            this.bugs = {
+                url: gitUrl.substring(0, gitUrl.length - 4) + '/issues',
+            };
+            this.homepage = gitUrl.substring(0, gitUrl.length - 4) + '#readme';
+        }
     }
 }

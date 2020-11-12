@@ -17,7 +17,7 @@ const questions: Question[] = [
         type: QuestionTypeEnum.Input,
         name: 'version',
         message: 'version:',
-        default: '1.0.0',
+        default: '0.0.1',
         validate: versionInputValidation,
     },
     {

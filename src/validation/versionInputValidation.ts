@@ -1,20 +1,10 @@
-import { isNumeric } from '../helper/isNumeric';
-
 const versionNumberErrorMsg = 'invalid version number';
+const versionNumberRegex = /[0-9]+\.[0-9]+\.[0-9]+/;
 
 export const versionInputValidation = (input: string): string | boolean => {
-    const splittedInput = input.split('.');
-    if (splittedInput.length !== 3) {
-        return versionNumberErrorMsg;
+    if (versionNumberRegex.test(input)) {
+        return true;
     }
-    if (!isNumeric(splittedInput[0])) {
-        return versionNumberErrorMsg;
-    }
-    if (!isNumeric(splittedInput[1])) {
-        return versionNumberErrorMsg;
-    }
-    if (!isNumeric(splittedInput[2])) {
-        return versionNumberErrorMsg;
-    }
-    return true;
+
+    return versionNumberErrorMsg;
 };

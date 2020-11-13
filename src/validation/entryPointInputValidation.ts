@@ -1,15 +1,9 @@
-const fileExtenstionErrorMsg = "don't add any file extension";
+const fileExtensionErrorMsg = "don't add any file extension";
+const fileExtensionRegEx = /\.js|\.ts$/;
 
 export const entryPointInputValidation = (input: string): string | boolean => {
-    const splittedInput = input.split('.');
-
-    if (splittedInput.length === 1) {
-        return true;
+    if (fileExtensionRegEx.test(input)) {
+        return fileExtensionErrorMsg;
     }
-
-    if (splittedInput[splittedInput.length - 1] !== 'js' || splittedInput[splittedInput.length - 1] !== 'ts') {
-        return fileExtenstionErrorMsg;
-    }
-
     return true;
 };

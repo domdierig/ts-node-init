@@ -7,8 +7,8 @@
         "node": ">=14.15.0"
     },
     "scripts": {
-        "dev": "tsc --watch",
-        "start": "node bin/tsni.js"
+        "dev": "npm install && tsc --watch",
+        "start": "npm install && node bin/tsni.js"
     },
     "bin": {
         "tsni": "bin/tsni.js"

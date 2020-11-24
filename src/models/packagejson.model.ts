@@ -12,6 +12,7 @@ export class PackageJsonModel {
     repository: { [key: string]: string } | null;
     bugs: { [key: string]: string } | null;
     homepage: string | null;
+    type: string = 'commonjs';
 
     constructor(answers: Answers, gitUrl: string | null) {
         this.name = answers.packageName;
@@ -38,6 +39,10 @@ export class PackageJsonModel {
                 url: gitUrl.substring(0, gitUrl.length - 4) + '/issues',
             };
             this.homepage = gitUrl.substring(0, gitUrl.length - 4) + '#readme';
+        }
+
+        if (answers.compileTargetModuleFormat === 'ES modules') {
+            this.type = 'module';
         }
     }
 }

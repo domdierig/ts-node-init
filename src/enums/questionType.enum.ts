@@ -2,7 +2,7 @@ export enum QuestionTypeEnum {
     Input = 'input',
     Number = 'number',
     Confirm = 'confirm',
-    List = 'List',
+    List = 'list',
     RawList = 'rawlist',
     Expand = 'expand',
     Checkbox = 'checkbox',

@@ -43,12 +43,6 @@ const questions: Question[] = [
         message: 'license:',
         default: 'ISC',
     },
-    {
-        type: QuestionTypeEnum.List,
-        name: 'compileTargetModuleFormat',
-        message: 'compile target module format',
-        choices: ['CommonJS', 'ES modules'],
-    },
 ];
 
 export { questions };

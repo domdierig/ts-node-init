@@ -5,5 +5,4 @@ export interface Answers {
     entryPoint: string;
     author: string;
     license: string;
-    compileTargetModuleFormat: string;
 }

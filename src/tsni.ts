@@ -2,10 +2,10 @@ import inquirer from 'inquirer';
 import { questions } from './constants/questions.const';
 import { Answers } from './interfaces/answers.interface';
 import { PackageJsonModel } from './models/packagejson.model';
+import { tsconfigjson } from './constants/tsconfigjson.const';
 import { writeFile } from './helper/writeFile';
 import { ensureDirExists } from './helper/ensureDirExists';
 import { getGitUrl } from './helper/getGitUrl';
-import { TsConfigJsonModel } from './models/tsconfigjson.module';
 
 const tsni = async () => {
     inquirer
@@ -13,9 +13,6 @@ const tsni = async () => {
         .then(async (answers: Answers) => {
             const gitUrl = await getGitUrl();
             const packagejson = new PackageJsonModel(answers, gitUrl);
-            const tsconfigjson = new TsConfigJsonModel(answers);
-
-            console.log(answers);
 
             await ensureDirExists('src');
 

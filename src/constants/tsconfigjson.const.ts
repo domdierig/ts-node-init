@@ -6,6 +6,7 @@ export const tsconfigjson = {
         moduleResolution: 'node',
         sourceMap: true,
         outDir: 'lib',
+        declaration: true,
     },
     lib: ['ES2020'],
 };

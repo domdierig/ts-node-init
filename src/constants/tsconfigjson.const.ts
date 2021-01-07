@@ -5,7 +5,7 @@ export const tsconfigjson = {
         target: 'ES2020',
         moduleResolution: 'node',
         sourceMap: true,
-        outDir: 'lib',
+        outDir: 'bin',
         declaration: true,
     },
     lib: ['ES2020'],

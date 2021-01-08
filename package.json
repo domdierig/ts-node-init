@@ -21,7 +21,7 @@
         "name": "Dominic Dierig",
         "url": "https://twitter.com/domdierig"
     },
-    "license": "ISC",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/DomPilipu/ts-node-init/issues"
     },

@@ -33,7 +33,7 @@
     },
     "dependencies": {
         "ini": "^2.0.0",
-        "inquirer": "^7.3.3",
+        "inquirer": "^8.0.0",
         "validate-npm-package-name": "^3.0.0"
     }
 }

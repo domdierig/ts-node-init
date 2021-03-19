@@ -43,6 +43,12 @@ const questions: Question[] = [
         message: 'license:',
         default: 'ISC',
     },
+    {
+        type: QuestionTypeEnum.Confirm,
+        name: 'tsnode',
+        message: 'use ts node package to execute code:',
+        default: false,
+    },
 ];
 
 export { questions };

@@ -5,4 +5,5 @@ export interface Answers {
     entryPoint: string;
     author: string;
     license: string;
+    tsnode: boolean;
 }

@@ -12,6 +12,9 @@ export declare class PackageJsonModel {
     devDependencies: {
         [key: string]: string;
     };
+    dependencies: {
+        [key: string]: string;
+    };
     repository: {
         [key: string]: string;
     } | null;

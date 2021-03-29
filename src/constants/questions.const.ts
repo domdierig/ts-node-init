@@ -46,7 +46,7 @@ const questions: Question[] = [
     {
         type: QuestionTypeEnum.Confirm,
         name: 'tsnode',
-        message: 'use ts node package to execute code:',
+        message: 'execute code with ts-node package:',
         default: false,
     },
 ];

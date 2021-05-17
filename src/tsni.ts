@@ -24,9 +24,9 @@ const tsni = async () => {
         })
         .catch((error) => {
             if (error.isTtyError) {
-                console.log('something went wrong with the inquirer dependency');
+                console.error('something went wrong with the inquirer dependency');
             } else {
-                console.log(error);
+                console.error(error);
             }
         });
 };

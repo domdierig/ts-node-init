@@ -15,8 +15,6 @@ export class PackageJsonModel {
     homepage: string | null;
 
     constructor(answers: Answers, gitUrl: string | null) {
-        console.log(answers);
-
         this.name = answers.packageName;
         this.version = answers.version;
         this.description = answers.description;

@@ -1,6 +1,6 @@
 {
     "name": "tsni",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "a simple cli to init a bare minimum node project with typescript",
     "main": "lib/tsni.js",
     "engines": {
@@ -12,7 +12,8 @@
     ],
     "scripts": {
         "dev": "tsc --watch",
-        "start": "node bin/tsni.js"
+        "start": "node bin/tsni.js",
+        "test": "jest"
     },
     "bin": {
         "tsni": "tsni.js"
@@ -32,8 +33,11 @@
     "homepage": "https://github.com/DomPilipu/ts-node-init#readme",
     "devDependencies": {
         "@types/inquirer": "^7.3.1",
+        "@types/jest": "^26.0.23",
         "@types/node": "^15.0.1",
-        "typescript": "^4.0.5"
+        "jest": "^27.0.4",
+        "ts-jest": "^27.0.3",
+        "typescript": "^4.3.4"
     },
     "dependencies": {
         "ini": "^2.0.0",

@@ -12,5 +12,6 @@ exports.tsconfigjson = {
         declaration: true,
     },
     lib: ['ES2020'],
+    exclude: ['bin'],
 };
 //# sourceMappingURL=tsconfigjson.const.js.map

@@ -1,4 +1,5 @@
 import { Answers } from '../interfaces/answers.interface';
+import { execSync } from 'child_process';
 
 export class PackageJsonModel {
     name: string;
@@ -39,9 +40,9 @@ export class PackageJsonModel {
         }
 
         const dependencies = {
-            '@types/node': '^14.14.35',
-            typescript: '^4.2.3',
-            'ts-node': '^9.1.1',
+            '@types/node': '^' + execSync('npm show @types/node version').toString(),
+            typescript: '^' + execSync('npm show typescript version').toString(),
+            'ts-node': '^' + execSync('npm show ts-node version').toString(),
         };
 
         if (answers.tsnode) {

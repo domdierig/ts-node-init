@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PackageJsonModel = void 0;
+const child_process_1 = require("child_process");
 class PackageJsonModel {
     constructor(answers, gitUrl) {
         this.name = answers.packageName;
@@ -24,9 +25,9 @@ class PackageJsonModel {
             this.homepage = gitUrl.substring(0, gitUrl.length - 4) + '#readme';
         }
         const dependencies = {
-            '@types/node': '^14.14.35',
-            typescript: '^4.2.3',
-            'ts-node': '^9.1.1',
+            '@types/node': '^' + child_process_1.execSync('npm show @types/node version').toString(),
+            typescript: '^' + child_process_1.execSync('npm show typescript version').toString(),
+            'ts-node': '^' + child_process_1.execSync('npm show ts-node version').toString(),
         };
         if (answers.tsnode) {
             this.dependencies = dependencies;

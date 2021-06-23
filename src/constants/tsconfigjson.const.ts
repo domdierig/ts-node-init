@@ -9,5 +9,5 @@ export const tsconfigjson = {
         declaration: true,
     },
     lib: ['ES2020'],
-    exclude: ['bin'],
+    exclude: ['bin', 'node_modules'],
 };

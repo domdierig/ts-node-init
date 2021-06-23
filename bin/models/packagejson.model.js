@@ -25,9 +25,9 @@ class PackageJsonModel {
             this.homepage = gitUrl.substring(0, gitUrl.length - 4) + '#readme';
         }
         const dependencies = {
-            '@types/node': '^' + child_process_1.execSync('npm show @types/node version').toString(),
-            typescript: '^' + child_process_1.execSync('npm show typescript version').toString(),
-            'ts-node': '^' + child_process_1.execSync('npm show ts-node version').toString(),
+            '@types/node': '^' + child_process_1.execSync('npm show @types/node version').toString().replace('\n', ''),
+            typescript: '^' + child_process_1.execSync('npm show typescript version').toString().replace('\n', ''),
+            'ts-node': '^' + child_process_1.execSync('npm show ts-node version').toString().replace('\n', ''),
         };
         if (answers.tsnode) {
             this.dependencies = dependencies;

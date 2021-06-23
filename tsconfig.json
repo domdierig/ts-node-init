@@ -9,5 +9,5 @@
         "declaration": false
     },
     "lib": ["ES2020"],
-    "exclude": ["bin", "__test__", ".github"]
+    "exclude": ["bin", "__test__", ".github", "node_modules"]
 }

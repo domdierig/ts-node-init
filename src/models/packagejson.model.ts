@@ -40,9 +40,9 @@ export class PackageJsonModel {
         }
 
         const dependencies = {
-            '@types/node': '^' + execSync('npm show @types/node version').toString(),
-            typescript: '^' + execSync('npm show typescript version').toString(),
-            'ts-node': '^' + execSync('npm show ts-node version').toString(),
+            '@types/node': '^' + execSync('npm show @types/node version').toString().replace('\n', ''),
+            typescript: '^' + execSync('npm show typescript version').toString().replace('\n', ''),
+            'ts-node': '^' + execSync('npm show ts-node version').toString().replace('\n', ''),
         };
 
         if (answers.tsnode) {

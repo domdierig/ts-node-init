@@ -11,9 +11,9 @@ export class PackageJsonModel {
     license: string;
     devDependencies: { [key: string]: string };
     dependencies: { [key: string]: string };
-    repository: { [key: string]: string } | null;
-    bugs: { [key: string]: string } | null;
-    homepage: string | null;
+    repository?: { [key: string]: string };
+    bugs?: { [key: string]: string };
+    homepage?: string;
 
     constructor(answers: Answers, gitUrl: string | null) {
         this.name = answers.packageName;

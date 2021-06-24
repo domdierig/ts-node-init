@@ -10,6 +10,7 @@ exports.tsconfigjson = {
         sourceMap: true,
         outDir: 'bin',
         declaration: true,
+        strict: true,
     },
     lib: ['ES2020'],
     exclude: ['bin', 'node_modules'],

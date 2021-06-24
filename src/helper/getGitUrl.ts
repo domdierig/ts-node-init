@@ -1,7 +1,7 @@
 import ini from 'ini';
 import fs from 'fs';
 
-export const getGitUrl = async (): Promise<string> | null => {
+export const getGitUrl = async (): Promise<string | null> => {
     if (fs.existsSync('.git')) {
         const config = ini.parse(fs.readFileSync('./.git/config', 'utf-8'));
 

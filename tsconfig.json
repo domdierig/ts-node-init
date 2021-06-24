@@ -6,7 +6,8 @@
         "moduleResolution": "node",
         "sourceMap": true,
         "outDir": "bin",
-        "declaration": false
+        "declaration": false,
+        "strict": true
     },
     "lib": ["ES2020"],
     "exclude": ["bin", "__test__", ".github", "node_modules"]

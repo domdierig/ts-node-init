@@ -3,9 +3,9 @@ import { questions } from './constants/questions.const';
 import { Answers } from './interfaces/answers.interface';
 import { PackageJsonModel } from './models/packagejson.model';
 import { tsconfigjson } from './constants/tsconfigjson.const';
-import { writeFile } from './helper/writeFile';
-import { ensureDirExists } from './helper/ensureDirExists';
-import { getGitUrl } from './helper/getGitUrl';
+import { writeFile } from './helpers/writeFile';
+import { ensureDirExists } from './helpers/ensureDirExists';
+import { getGitUrl } from './helpers/getGitUrl';
 
 const tsni = async () => {
     inquirer

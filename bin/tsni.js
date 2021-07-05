@@ -7,9 +7,9 @@ const inquirer_1 = __importDefault(require("inquirer"));
 const questions_const_1 = require("./constants/questions.const");
 const packagejson_model_1 = require("./models/packagejson.model");
 const tsconfigjson_const_1 = require("./constants/tsconfigjson.const");
-const writeFile_1 = require("./helper/writeFile");
-const ensureDirExists_1 = require("./helper/ensureDirExists");
-const getGitUrl_1 = require("./helper/getGitUrl");
+const writeFile_1 = require("./helpers/writeFile");
+const ensureDirExists_1 = require("./helpers/ensureDirExists");
+const getGitUrl_1 = require("./helpers/getGitUrl");
 const tsni = async () => {
     inquirer_1.default
         .prompt(questions_const_1.questions)

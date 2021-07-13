@@ -1,6 +1,6 @@
 {
     "name": "tsni",
-    "version": "1.2.4",
+    "version": "1.2.5",
     "description": "a simple cli to init a bare minimum node project with typescript",
     "main": "lib/tsni.js",
     "engines": {

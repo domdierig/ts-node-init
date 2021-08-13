@@ -4,7 +4,7 @@
     "description": "a simple cli to init a bare minimum node project with typescript",
     "main": "lib/tsni.js",
     "engines": {
-        "node": ">=14.15.0"
+        "node": ">=14.17.5"
     },
     "files": [
         "bin",

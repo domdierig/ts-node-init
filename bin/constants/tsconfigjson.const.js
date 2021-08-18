@@ -12,6 +12,7 @@ exports.tsconfigjson = {
         declaration: true,
         strict: true,
         rootDir: 'src',
+        forceConsistentCasingInFileNames: true,
     },
     lib: ['ES2020'],
     exclude: ['bin', 'node_modules'],

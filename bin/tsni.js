@@ -14,13 +14,13 @@ const tsni = async () => {
     inquirer_1.default
         .prompt(questions_const_1.questions)
         .then(async (answers) => {
-        const gitUrl = await getGitUrl_1.getGitUrl();
+        const gitUrl = await (0, getGitUrl_1.getGitUrl)();
         const packagejson = new packagejson_model_1.PackageJsonModel(answers, gitUrl);
-        await ensureDirExists_1.ensureDirExists('src');
+        await (0, ensureDirExists_1.ensureDirExists)('src');
         const fileName = 'src/' + answers.entryPoint + '.ts';
-        await writeFile_1.writeFile('package.json', JSON.stringify(packagejson, null, 4));
-        await writeFile_1.writeFile('tsconfig.json', JSON.stringify(tsconfigjson_const_1.tsconfigjson, null, 4));
-        await writeFile_1.writeFile(fileName, "console.log('hello world');");
+        await (0, writeFile_1.writeFile)('package.json', JSON.stringify(packagejson, null, 4));
+        await (0, writeFile_1.writeFile)('tsconfig.json', JSON.stringify(tsconfigjson_const_1.tsconfigjson, null, 4));
+        await (0, writeFile_1.writeFile)(fileName, "console.log('hello world');");
     })
         .catch((error) => {
         if (error.isTtyError) {

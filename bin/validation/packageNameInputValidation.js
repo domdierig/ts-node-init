@@ -7,7 +7,7 @@ exports.packageNameInputValidation = void 0;
 const validate_npm_package_name_1 = __importDefault(require("validate-npm-package-name"));
 const packageNameErrorMsg = 'invalid package name';
 const packageNameInputValidation = (input) => {
-    const validationResult = validate_npm_package_name_1.default(input);
+    const validationResult = (0, validate_npm_package_name_1.default)(input);
     return validationResult.validForNewPackages;
 };
 exports.packageNameInputValidation = packageNameInputValidation;

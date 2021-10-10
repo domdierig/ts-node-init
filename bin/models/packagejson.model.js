@@ -39,6 +39,14 @@ class PackageJsonModel {
             this.main = 'bin/' + answers.entryPoint + '.js';
             this.scripts['start'] = 'node ' + this.main;
         }
+        if (answers.jest) {
+            this.scripts['test'] = 'jest';
+            this.devDependencies['jest'] = '^' + (0, child_process_1.execSync)('npm show jest version').toString().replace('\n', '');
+            if (answers.tsjest) {
+                this.devDependencies['@types/jest'] = '^' + (0, child_process_1.execSync)('npm show @types/jest version').toString().replace('\n', '');
+                this.devDependencies['ts-jest'] = '^' + (0, child_process_1.execSync)('npm show ts-jest version').toString().replace('\n', '');
+            }
+        }
     }
 }
 exports.PackageJsonModel = PackageJsonModel;

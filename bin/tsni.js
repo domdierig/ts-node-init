@@ -10,6 +10,8 @@ const tsconfigjson_const_1 = require("./constants/tsconfigjson.const");
 const writeFile_1 = require("./helpers/writeFile");
 const ensureDirExists_1 = require("./helpers/ensureDirExists");
 const getGitUrl_1 = require("./helpers/getGitUrl");
+const jestconfigjs_const_1 = require("./constants/jestconfigjs.const");
+const defaulttest_const_1 = require("./constants/defaulttest.const");
 const tsni = async () => {
     inquirer_1.default
         .prompt(questions_const_1.questions)
@@ -17,7 +19,17 @@ const tsni = async () => {
         const gitUrl = await (0, getGitUrl_1.getGitUrl)();
         const packagejson = new packagejson_model_1.PackageJsonModel(answers, gitUrl);
         await (0, ensureDirExists_1.ensureDirExists)('src');
-        const fileName = 'src/' + answers.entryPoint + '.ts';
+        if (answers.jest) {
+            (0, ensureDirExists_1.ensureDirExists)('__tests__');
+            tsconfigjson_const_1.tsconfigjson.exclude.push('__tests__');
+            let testFileName = 'default.test.js';
+            if (answers.tsjest) {
+                await (0, writeFile_1.writeFile)('jest.config.js', jestconfigjs_const_1.jestconfigjs);
+                testFileName = 'default.test.ts';
+            }
+            await (0, writeFile_1.writeFile)(`__tests__/${testFileName}`, defaulttest_const_1.defaulttest);
+        }
+        const fileName = `src/${answers.entryPoint}.ts`;
         await (0, writeFile_1.writeFile)('package.json', JSON.stringify(packagejson, null, 4));
         await (0, writeFile_1.writeFile)('tsconfig.json', JSON.stringify(tsconfigjson_const_1.tsconfigjson, null, 4));
         await (0, writeFile_1.writeFile)(fileName, "console.log('hello world');");

@@ -53,6 +53,18 @@ const questions = [
         message: 'execute code with ts-node package:',
         default: false,
     },
+    {
+        type: questionType_enum_1.QuestionTypeEnum.Confirm,
+        name: 'jest',
+        message: 'add jest test framework:',
+        default: false,
+    },
+    {
+        type: questionType_enum_1.QuestionTypeEnum.Confirm,
+        name: 'tsjest',
+        message: 'execute tests with ts-jest package:',
+        default: false,
+    },
 ];
 exports.questions = questions;
 //# sourceMappingURL=questions.const.js.map

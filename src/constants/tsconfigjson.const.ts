@@ -2,7 +2,7 @@ export const tsconfigjson = {
 	compilerOptions: {
 		module: 'CommonJS',
 		esModuleInterop: true,
-		target: 'ES2020',
+		target: 'ES2021',
 		moduleResolution: 'node',
 		sourceMap: true,
 		outDir: 'bin',
@@ -11,6 +11,6 @@ export const tsconfigjson = {
 		rootDir: 'src',
 		forceConsistentCasingInFileNames: true,
 	},
-	lib: ['ES2020'],
+	lib: ['ES2021'],
 	exclude: ['bin', 'node_modules'],
 };

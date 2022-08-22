@@ -1,9 +1,9 @@
 import path from 'path';
-import { QuestionTypeEnum } from '../enums/questionType.enum';
-import { Question } from '../interfaces/question.interface';
-import { entryPointInputValidation } from '../validation/entryPointInputValidation';
-import { packageNameInputValidation } from '../validation/packageNameInputValidation';
-import { versionInputValidation } from '../validation/versionInputValidation';
+import { QuestionTypeEnum } from '../enums/questionType.enum.js';
+import { Question } from '../interfaces/question.interface.js';
+import { entryPointInputValidation } from '../validation/entryPointInputValidation.js';
+import { packageNameInputValidation } from '../validation/packageNameInputValidation.js';
+import { versionInputValidation } from '../validation/versionInputValidation.js';
 
 const questions: Question[] = [
 	{

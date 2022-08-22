@@ -3,8 +3,9 @@
 	"version": "1.5.1",
 	"description": "a simple cli to init a bare minimum node project with typescript",
 	"main": "lib/tsni.js",
+	"type": "module",
 	"engines": {
-		"node": ">=16.0.0"
+		"node": ">=18.0.0"
 	},
 	"files": [
 		"bin",

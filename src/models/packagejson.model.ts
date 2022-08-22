@@ -1,4 +1,4 @@
-import { Answers } from '../interfaces/answers.interface';
+import { Answers } from '../interfaces/answers.interface.js';
 import { execSync } from 'child_process';
 
 export class PackageJsonModel {

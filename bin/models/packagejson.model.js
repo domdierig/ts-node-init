@@ -1,8 +1,17 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.PackageJsonModel = void 0;
-const child_process_1 = require("child_process");
-class PackageJsonModel {
+import { execSync } from 'child_process';
+export class PackageJsonModel {
+    name;
+    version;
+    description;
+    main;
+    scripts;
+    author;
+    license;
+    devDependencies;
+    dependencies;
+    repository;
+    bugs;
+    homepage;
     constructor(answers, gitUrl) {
         this.name = answers.packageName;
         this.version = answers.version;
@@ -25,11 +34,11 @@ class PackageJsonModel {
             this.homepage = gitUrl.substring(0, gitUrl.length - 4) + '#readme';
         }
         const dependencies = {
-            '@types/node': '^' + (0, child_process_1.execSync)('npm show @types/node version').toString().replace('\n', ''),
-            typescript: '^' + (0, child_process_1.execSync)('npm show typescript version').toString().replace('\n', ''),
+            '@types/node': '^' + execSync('npm show @types/node version').toString().replace('\n', ''),
+            typescript: '^' + execSync('npm show typescript version').toString().replace('\n', ''),
         };
         if (answers.tsnode) {
-            dependencies['ts-node'] = '^' + (0, child_process_1.execSync)('npm show ts-node version').toString().replace('\n', '');
+            dependencies['ts-node'] = '^' + execSync('npm show ts-node version').toString().replace('\n', '');
             this.dependencies = dependencies;
             this.main = 'src/' + answers.entryPoint + '.ts';
             this.scripts['start'] = 'ts-node ' + this.main;
@@ -41,13 +50,12 @@ class PackageJsonModel {
         }
         if (answers.jest) {
             this.scripts['test'] = 'jest';
-            this.devDependencies['jest'] = '^' + (0, child_process_1.execSync)('npm show jest version').toString().replace('\n', '');
+            this.devDependencies['jest'] = '^' + execSync('npm show jest version').toString().replace('\n', '');
             if (answers.tsjest) {
-                this.devDependencies['@types/jest'] = '^' + (0, child_process_1.execSync)('npm show @types/jest version').toString().replace('\n', '');
-                this.devDependencies['ts-jest'] = '^' + (0, child_process_1.execSync)('npm show ts-jest version').toString().replace('\n', '');
+                this.devDependencies['@types/jest'] = '^' + execSync('npm show @types/jest version').toString().replace('\n', '');
+                this.devDependencies['ts-jest'] = '^' + execSync('npm show ts-jest version').toString().replace('\n', '');
             }
         }
     }
 }
-exports.PackageJsonModel = PackageJsonModel;
 //# sourceMappingURL=packagejson.model.js.map

@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.tsconfigjson = void 0;
-exports.tsconfigjson = {
+export const tsconfigjson = {
     compilerOptions: {
         module: 'CommonJS',
         esModuleInterop: true,

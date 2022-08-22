@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.QuestionTypeEnum = void 0;
-var QuestionTypeEnum;
+export var QuestionTypeEnum;
 (function (QuestionTypeEnum) {
     QuestionTypeEnum["Input"] = "input";
     QuestionTypeEnum["Number"] = "number";
@@ -12,5 +9,5 @@ var QuestionTypeEnum;
     QuestionTypeEnum["Checkbox"] = "checkbox";
     QuestionTypeEnum["Password"] = "password";
     QuestionTypeEnum["Editor"] = "editor";
-})(QuestionTypeEnum = exports.QuestionTypeEnum || (exports.QuestionTypeEnum = {}));
+})(QuestionTypeEnum || (QuestionTypeEnum = {}));
 //# sourceMappingURL=questionType.enum.js.map

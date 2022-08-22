@@ -1,70 +1,64 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.questions = void 0;
-const path_1 = __importDefault(require("path"));
-const questionType_enum_1 = require("../enums/questionType.enum");
-const entryPointInputValidation_1 = require("../validation/entryPointInputValidation");
-const packageNameInputValidation_1 = require("../validation/packageNameInputValidation");
-const versionInputValidation_1 = require("../validation/versionInputValidation");
+import path from 'path';
+import { QuestionTypeEnum } from '../enums/questionType.enum.js';
+import { entryPointInputValidation } from '../validation/entryPointInputValidation.js';
+import { packageNameInputValidation } from '../validation/packageNameInputValidation.js';
+import { versionInputValidation } from '../validation/versionInputValidation.js';
 const questions = [
     {
-        type: questionType_enum_1.QuestionTypeEnum.Input,
+        type: QuestionTypeEnum.Input,
         name: 'packageName',
         message: 'package name:',
-        default: path_1.default.basename(process.cwd()),
-        validate: packageNameInputValidation_1.packageNameInputValidation,
+        default: path.basename(process.cwd()),
+        validate: packageNameInputValidation,
     },
     {
-        type: questionType_enum_1.QuestionTypeEnum.Input,
+        type: QuestionTypeEnum.Input,
         name: 'version',
         message: 'version:',
         default: '0.0.1',
-        validate: versionInputValidation_1.versionInputValidation,
+        validate: versionInputValidation,
     },
     {
-        type: questionType_enum_1.QuestionTypeEnum.Input,
+        type: QuestionTypeEnum.Input,
         name: 'description',
         message: 'description:',
     },
     {
-        type: questionType_enum_1.QuestionTypeEnum.Input,
+        type: QuestionTypeEnum.Input,
         name: 'entryPoint',
         message: 'entry point:',
         default: 'app',
-        validate: entryPointInputValidation_1.entryPointInputValidation,
+        validate: entryPointInputValidation,
     },
     {
-        type: questionType_enum_1.QuestionTypeEnum.Input,
+        type: QuestionTypeEnum.Input,
         name: 'author',
         message: 'author:',
     },
     {
-        type: questionType_enum_1.QuestionTypeEnum.Input,
+        type: QuestionTypeEnum.Input,
         name: 'license',
         message: 'license:',
         default: 'ISC',
     },
     {
-        type: questionType_enum_1.QuestionTypeEnum.Confirm,
+        type: QuestionTypeEnum.Confirm,
         name: 'tsnode',
         message: 'execute code with ts-node package:',
         default: false,
     },
     {
-        type: questionType_enum_1.QuestionTypeEnum.Confirm,
+        type: QuestionTypeEnum.Confirm,
         name: 'jest',
         message: 'add jest test framework:',
         default: false,
     },
     {
-        type: questionType_enum_1.QuestionTypeEnum.Confirm,
+        type: QuestionTypeEnum.Confirm,
         name: 'tsjest',
         message: 'execute tests with ts-jest package:',
         default: false,
     },
 ];
-exports.questions = questions;
+export { questions };
 //# sourceMappingURL=questions.const.js.map

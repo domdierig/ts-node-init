@@ -1,8 +1,8 @@
 {
 	"compilerOptions": {
-		"module": "CommonJS",
+		"module": "ES2022",
 		"esModuleInterop": true,
-		"target": "ES2020",
+		"target": "ES2022",
 		"moduleResolution": "node",
 		"sourceMap": true,
 		"outDir": "bin",
@@ -11,6 +11,6 @@
 		"rootDir": "src",
 		"forceConsistentCasingInFileNames": true
 	},
-	"lib": ["ES2020"],
+	"lib": ["ES2022"],
 	"exclude": ["bin", "__tests__", ".github", "node_modules"]
 }

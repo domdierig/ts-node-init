@@ -1,4 +1,3 @@
 #!/usr/bin/env node
-
-const tsni = require('./bin/tsni.js');
+import { tsni } from './bin/tsni.js';
 tsni();

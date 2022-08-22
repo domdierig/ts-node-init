@@ -1,15 +1,15 @@
 import inquirer from 'inquirer';
-import { questions } from './constants/questions.const';
-import { Answers } from './interfaces/answers.interface';
-import { PackageJsonModel } from './models/packagejson.model';
-import { tsconfigjson } from './constants/tsconfigjson.const';
-import { writeFile } from './helpers/writeFile';
-import { ensureDirExists } from './helpers/ensureDirExists';
-import { getGitUrl } from './helpers/getGitUrl';
-import { jestconfigjs } from './constants/jestconfigjs.const';
-import { defaulttest } from './constants/defaulttest.const';
+import { questions } from './constants/questions.const.js';
+import { Answers } from './interfaces/answers.interface.js';
+import { PackageJsonModel } from './models/packagejson.model.js';
+import { tsconfigjson } from './constants/tsconfigjson.const.js';
+import { writeFile } from './helpers/writeFile.js';
+import { ensureDirExists } from './helpers/ensureDirExists.js';
+import { getGitUrl } from './helpers/getGitUrl.js';
+import { jestconfigjs } from './constants/jestconfigjs.const.js';
+import { defaulttest } from './constants/defaulttest.const.js';
 
-const tsni = async () => {
+export const tsni = async () => {
 	inquirer
 		.prompt(questions)
 		.then(async (answers: Answers) => {
@@ -47,5 +47,3 @@ const tsni = async () => {
 			}
 		});
 };
-
-module.exports = tsni;

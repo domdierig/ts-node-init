@@ -45,6 +45,6 @@
 	"dependencies": {
 		"ini": "3.0.1",
 		"inquirer": "9.1.0",
-		"validate-npm-package-name": "4.0.0"
+		"validate-npm-package-name": "5.0.0"
 	}
 }

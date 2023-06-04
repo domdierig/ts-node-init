@@ -18,7 +18,6 @@ export class PackageJsonModel {
         this.description = answers.description;
         this.author = answers.author;
         this.license = answers.license;
-        this.devDependencies = {};
         this.dependencies = {};
         this.scripts = {
             dev: 'tsc --watch',
@@ -33,11 +32,10 @@ export class PackageJsonModel {
             };
             this.homepage = gitUrl.substring(0, gitUrl.length - 4) + '#readme';
         }
-        const dependencies = {
+        this.devDependencies = {
             '@types/node': '^' + execSync('npm show @types/node version').toString().replace('\n', ''),
             typescript: '^' + execSync('npm show typescript version').toString().replace('\n', ''),
         };
-        this.devDependencies = dependencies;
         this.main = 'bin/' + answers.entryPoint + '.js';
         this.scripts['start'] = 'node ' + this.main;
         if (answers.jest) {

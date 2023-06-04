@@ -7,6 +7,7 @@ import { ensureDirExists } from './helpers/ensureDirExists.js';
 import { getGitUrl } from './helpers/getGitUrl.js';
 import { jestconfigjs } from './constants/jestconfigjs.const.js';
 import { defaulttest } from './constants/defaulttest.const.js';
+import { entryfile } from './constants/entryfile.const.js';
 export const tsni = async () => {
     inquirer
         .prompt(questions)
@@ -27,7 +28,7 @@ export const tsni = async () => {
         const fileName = `src/${answers.entryPoint}.ts`;
         await writeFile('package.json', JSON.stringify(packagejson, null, 4));
         await writeFile('tsconfig.json', JSON.stringify(tsconfigjson, null, 4));
-        await writeFile(fileName, "console.log('hello world');");
+        await writeFile(fileName, entryfile);
     })
         .catch((error) => {
         if (error.isTtyError) {

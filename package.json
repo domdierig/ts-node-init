@@ -3,7 +3,6 @@
     "version": "3.0.1",
     "description": "a simple cli to init a bare minimum node project with typescript",
     "main": "lib/tsni.js",
-    "type": "module",
     "engines": {
         "node": ">=18.16.0"
     },
@@ -13,7 +12,7 @@
     "scripts": {
         "dev": "tsc --watch",
         "start": "node bin/tsni.js",
-        "test": "jest"
+        "test": "jest --passWithNoTests"
     },
     "bin": {
         "tsni": "tsni.js"

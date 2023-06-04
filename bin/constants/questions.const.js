@@ -43,12 +43,6 @@ const questions = [
     },
     {
         type: QuestionTypeEnum.Confirm,
-        name: 'tsnode',
-        message: 'execute code with ts-node package:',
-        default: false,
-    },
-    {
-        type: QuestionTypeEnum.Confirm,
         name: 'jest',
         message: 'add jest test framework:',
         default: false,

@@ -1,50 +1,49 @@
 {
-	"name": "tsni",
-	"version": "2.0.0",
-	"description": "a simple cli to init a bare minimum node project with typescript",
-	"main": "lib/tsni.js",
-	"type": "module",
-	"engines": {
-		"node": ">=18.0.0"
-	},
-	"files": [
-		"bin",
-		"lib"
-	],
-	"scripts": {
-		"dev": "tsc --watch",
-		"start": "node bin/tsni.js",
-		"test": "jest"
-	},
-	"bin": {
-		"tsni": "tsni.js"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/DomPilipu/ts-node-init.git"
-	},
-	"author": {
-		"name": "Dominic Dierig",
-		"url": "https://twitter.com/domdierig"
-	},
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/DomPilipu/ts-node-init/issues"
-	},
-	"homepage": "https://github.com/DomPilipu/ts-node-init#readme",
-	"devDependencies": {
-		"@types/ini": "1.3.31",
-		"@types/inquirer": "9.0.1",
-		"@types/jest": "27.4.1",
-		"@types/node": "18.7.18",
-		"@types/validate-npm-package-name": "4.0.0",
-		"jest": "27.5.1",
-		"ts-jest": "27.1.4",
-		"typescript": "4.8.3"
-	},
-	"dependencies": {
-		"ini": "3.0.1",
-		"inquirer": "9.1.0",
-		"validate-npm-package-name": "4.0.0"
-	}
+    "name": "tsni",
+    "version": "2.0.0",
+    "description": "a simple cli to init a bare minimum node project with typescript",
+    "main": "lib/tsni.js",
+    "type": "module",
+    "engines": {
+        "node": ">=18.16.0"
+    },
+    "files": [
+        "bin"
+    ],
+    "scripts": {
+        "dev": "tsc --watch",
+        "start": "node bin/tsni.js",
+        "test": "jest"
+    },
+    "bin": {
+        "tsni": "tsni.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DomPilipu/ts-node-init.git"
+    },
+    "author": {
+        "name": "Dominic Dierig",
+        "url": "https://twitter.com/domdierig"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/DomPilipu/ts-node-init/issues"
+    },
+    "homepage": "https://github.com/DomPilipu/ts-node-init#readme",
+    "devDependencies": {
+        "@types/ini": "1.3.31",
+        "@types/inquirer": "9.0.3",
+        "@types/jest": "29.5.2",
+        "@types/node": "20.2.5",
+        "@types/validate-npm-package-name": "4.0.0",
+        "jest": "29.5.0",
+        "ts-jest": "29.1.0",
+        "typescript": "5.1.3"
+    },
+    "dependencies": {
+        "ini": "4.1.1",
+        "inquirer": "9.2.7",
+        "validate-npm-package-name": "5.0.0"
+    }
 }

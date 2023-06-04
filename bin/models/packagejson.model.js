@@ -37,17 +37,9 @@ export class PackageJsonModel {
             '@types/node': '^' + execSync('npm show @types/node version').toString().replace('\n', ''),
             typescript: '^' + execSync('npm show typescript version').toString().replace('\n', ''),
         };
-        if (answers.tsnode) {
-            dependencies['ts-node'] = '^' + execSync('npm show ts-node version').toString().replace('\n', '');
-            this.dependencies = dependencies;
-            this.main = 'src/' + answers.entryPoint + '.ts';
-            this.scripts['start'] = 'ts-node ' + this.main;
-        }
-        else {
-            this.devDependencies = dependencies;
-            this.main = 'bin/' + answers.entryPoint + '.js';
-            this.scripts['start'] = 'node ' + this.main;
-        }
+        this.devDependencies = dependencies;
+        this.main = 'bin/' + answers.entryPoint + '.js';
+        this.scripts['start'] = 'node ' + this.main;
         if (answers.jest) {
             this.scripts['test'] = 'jest';
             this.devDependencies['jest'] = '^' + execSync('npm show jest version').toString().replace('\n', '');

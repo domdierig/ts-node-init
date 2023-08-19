@@ -41,8 +41,8 @@ export class PackageJsonModel {
         }
 
         this.devDependencies = {
-            '@types/node': '^' + execSync('npm show @types/node version').toString().replace('\n', ''),
-            typescript: '^' + execSync('npm show typescript version').toString().replace('\n', ''),
+            '@types/node': execSync('npm show @types/node version').toString().replace('\n', ''),
+            typescript: execSync('npm show typescript version').toString().replace('\n', ''),
         };
 
         this.main = 'bin/' + answers.entryPoint + '.js';
@@ -50,10 +50,10 @@ export class PackageJsonModel {
 
         if (answers.jest) {
             this.scripts['test'] = 'jest';
-            this.devDependencies['jest'] = '^' + execSync('npm show jest version').toString().replace('\n', '');
+            this.devDependencies['jest'] = execSync('npm show jest version').toString().replace('\n', '');
             if (answers.tsjest) {
-                this.devDependencies['@types/jest'] = '^' + execSync('npm show @types/jest version').toString().replace('\n', '');
-                this.devDependencies['ts-jest'] = '^' + execSync('npm show ts-jest version').toString().replace('\n', '');
+                this.devDependencies['@types/jest'] = execSync('npm show @types/jest version').toString().replace('\n', '');
+                this.devDependencies['ts-jest'] = execSync('npm show ts-jest version').toString().replace('\n', '');
             }
         }
     }

@@ -11,6 +11,7 @@ export class PackageJsonModel {
     license: string;
     devDependencies: { [key: string]: string };
     dependencies: { [key: string]: string };
+    type: string;
     repository?: { [key: string]: string };
     bugs?: { [key: string]: string };
     homepage?: string;
@@ -21,6 +22,7 @@ export class PackageJsonModel {
         this.description = answers.description;
         this.author = answers.author;
         this.license = answers.license;
+        this.type = 'module';
         this.dependencies = {};
 
         this.scripts = {

@@ -9,6 +9,7 @@ export class PackageJsonModel {
     license;
     devDependencies;
     dependencies;
+    type;
     repository;
     bugs;
     homepage;
@@ -18,6 +19,7 @@ export class PackageJsonModel {
         this.description = answers.description;
         this.author = answers.author;
         this.license = answers.license;
+        this.type = 'module';
         this.dependencies = {};
         this.scripts = {
             dev: 'tsc --watch',
@@ -33,17 +35,17 @@ export class PackageJsonModel {
             this.homepage = gitUrl.substring(0, gitUrl.length - 4) + '#readme';
         }
         this.devDependencies = {
-            '@types/node': '^' + execSync('npm show @types/node version').toString().replace('\n', ''),
-            typescript: '^' + execSync('npm show typescript version').toString().replace('\n', ''),
+            '@types/node': execSync('npm show @types/node version').toString().replace('\n', ''),
+            typescript: execSync('npm show typescript version').toString().replace('\n', ''),
         };
         this.main = 'bin/' + answers.entryPoint + '.js';
         this.scripts['start'] = 'node ' + this.main;
         if (answers.jest) {
             this.scripts['test'] = 'jest';
-            this.devDependencies['jest'] = '^' + execSync('npm show jest version').toString().replace('\n', '');
+            this.devDependencies['jest'] = execSync('npm show jest version').toString().replace('\n', '');
             if (answers.tsjest) {
-                this.devDependencies['@types/jest'] = '^' + execSync('npm show @types/jest version').toString().replace('\n', '');
-                this.devDependencies['ts-jest'] = '^' + execSync('npm show ts-jest version').toString().replace('\n', '');
+                this.devDependencies['@types/jest'] = execSync('npm show @types/jest version').toString().replace('\n', '');
+                this.devDependencies['ts-jest'] = execSync('npm show ts-jest version').toString().replace('\n', '');
             }
         }
     }
